@@ -1,0 +1,20 @@
+/* layout */
+$sider-width:200px;
+$mainColor:#fff;
+$theme:#fff;
+// header
+
+/* 自定义封装 */
+// 浏览器适配动画效果
+@mixin webkit($type, $value) {
+  -webkit-#{$type}: $value;
+  -moz-#{$type}: $value;
+  -o-#{$type}: $value;
+  -ms-#{$type}: $value;
+  #{$type}: $value;
+}
+@mixin icon($size,$color,$padding) {
+  font-size: $size;
+  color: $color;
+  padding:$padding;
+}
