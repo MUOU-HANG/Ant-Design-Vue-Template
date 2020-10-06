@@ -1,0 +1,16 @@
+/* ant-layout-header */
+.ant-layout-header {
+  padding: 0 0 !important;
+  height: $headerHeight !important;
+  line-height: $headerHeight !important;
+}
+/* ant-layout-sider */
+/deep/ .ant-layout-sider-children {
+  height: 100vh !important;
+  @include webkit(box-shadow, 3px 0 16px rgba(0, 0, 0, 0.1));
+}
+
+/* ant-divider-horizontal */
+.ant-divider-horizontal{
+  margin: 0 0 !important;
+}

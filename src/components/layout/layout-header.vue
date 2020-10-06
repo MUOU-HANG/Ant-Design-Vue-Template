@@ -1,14 +1,24 @@
 <template>
   <a-layout-header class="header" style="background: #fff;">
-    <div class="header-wrap" @click="toggleCollapse">
-      <MenuUnfoldOutlined v-if="data.isCollapse" class="icon" />
-      <MenuFoldOutlined v-else class="icon" />
+    <div class="header-wrap">
+      <div class="header-left" @click="toggleCollapse">
+        <MenuUnfoldOutlined v-if="data.isCollapse" class="icon" />
+        <MenuFoldOutlined v-else class="icon" />
+      </div>
+      <div class="header-right">
+        <!-- 消息提示 -->
+        <HeaderNoticBadge class="icon notice-badge" />
+        <!-- 用户中心 -->
+        <HeaderUserCenter class="icon" />
+      </div>
     </div>
   </a-layout-header>
 </template>
 
 <script lang="ts">
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons-vue";
+import HeaderNoticBadge from "@c/headerComponents/headerNoticeBadge.vue";
+import HeaderUserCenter from "@c/headerComponents/headerUserCenter.vue";
 import { reactive, computed } from "vue";
 import { useStore } from "vuex";
 export default {
@@ -18,7 +28,9 @@ export default {
   /** 组件 */
   components: {
     MenuFoldOutlined,
-    MenuUnfoldOutlined
+    MenuUnfoldOutlined,
+    HeaderNoticBadge,
+    HeaderUserCenter
   },
   setup() {
     const store = useStore();
@@ -38,17 +50,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ant-layout-header {
-  padding: 0 0 !important;
-}
 .header {
   background-color: $theme;
   @include webkit(box-shadow, 0 4px 6px 0 rgba(0, 0, 0, 0.1));
 }
-.header-wrap {
-  display: inline-block;
-}
 .icon {
-  @include icon(18px, "", 0 0 0 20px);
+  @include icon(18px, "", 0 20px 0 20px);
+}
+
+.header-wrap {
+  .header-left,
+  .header-right {
+    display: inline-block;
+    > * {
+      display: inline-block;
+    }
+  }
+}
+.header-right {
+  position: fixed;
+  right: 0;
+  padding-right: 20px;
+  .notice-badge:hover {
+    background-color: rgb(249, 249, 249);
+    cursor: pointer;
+  }
 }
 </style>

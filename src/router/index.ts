@@ -10,20 +10,61 @@ const routes: Array<any> = [
       {
         path: "/console",
         name: "Console",
+        hidden: false,
         meta: {
-          title: "控制台",
-          icon: "MenuUnfoldOutlined"
+          title: "菜单一"
         },
-        component: () => import("@v/console/console.vue")
+        component: () => import("@v/console/console.vue"),
+        children: [
+          {
+            path: "/item1",
+            name: "Item1",
+            hidden: false,
+            meta: {
+              title: "导航一"
+            },
+            component: () => import("@v/console/item1.vue")
+          },
+          {
+            path: "/item2",
+            name: "Item2",
+            hidden: false,
+            meta: {
+              title: "导航二"
+            },
+            component: () => import("@v/console/item2.vue")
+          }
+        ]
       },
       {
         path: "/info",
         name: "Info",
+        hidden: false,
         meta: {
-          title: "信息管理",
+          title: "菜单二",
           icon: "MenuUnfoldOutlined"
         },
-        component: () => import("@v/console/console.vue")
+        component: () => import("@v/info/item1.vue"),
+        children: [
+          {
+            path: "/item3",
+            name: "Item3",
+            hidden: false,
+            meta: {
+              title: "导航一"
+            },
+            component: () => import("@v/info/item1.vue")
+          },
+          {
+            path: "/item4",
+            name: "Item4",
+            hidden: false,
+            meta: {
+              title: "导航二"
+            },
+            component: () => import("@v/info/item2.vue")
+          }
+        ]
       }
     ]
   }

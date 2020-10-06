@@ -1,7 +1,8 @@
 /* layout */
-$sider-width:200px;
-$mainColor:#fff;
-$theme:#fff;
+$siderWidth:200px; // 菜单栏的宽度
+$mainColor:#fff; // main背景色（不是主色！）
+$theme:#fff; // 主题颜色
+$headerHeight:50px;  // 顶部导航的高度
 // header
 
 /* 自定义封装 */

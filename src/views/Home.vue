@@ -3,9 +3,7 @@
     <LayoutSider />
     <a-layout>
       <LayoutHeader />
-      <a-layout-content>
-        <LayoutMain />
-      </a-layout-content>
+      <LayoutMain />
     </a-layout>
   </a-layout>
 </template>

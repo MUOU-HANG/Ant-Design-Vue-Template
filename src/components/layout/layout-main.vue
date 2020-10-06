@@ -1,7 +1,8 @@
 <template>
   <div class="main-wrap">
-    main
-    <router-view />
+    <a-layout-content>
+      <router-view />
+    </a-layout-content>
   </div>
 </template>
 
@@ -23,5 +24,10 @@ export default {
 .main-wrap {
   background-color: $mainColor;
   margin: 10px;
+  position: absolute;
+  top: $headerHeight;
+  right: 0;
+  left: $siderWidth;
+  bottom: 0;
 }
 </style>
