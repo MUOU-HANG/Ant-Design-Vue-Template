@@ -1,7 +1,9 @@
 <template>
   <div class="main-wrap">
     <a-layout-content>
-      <router-view />
+      <router-view>
+        <router-view />
+      </router-view>
     </a-layout-content>
   </div>
 </template>

@@ -7,6 +7,7 @@ const routes: Array<any> = [
     hidden: false,
     component: Layout,
     children: [
+      // 菜单一
       {
         path: "/console",
         name: "Console",
@@ -36,6 +37,7 @@ const routes: Array<any> = [
           }
         ]
       },
+      // 菜单二
       {
         path: "/info",
         name: "Info",
@@ -65,6 +67,34 @@ const routes: Array<any> = [
             component: () => import("@v/info/item2.vue")
           }
         ]
+      },
+      // 用户中心
+      {
+        path: "/user",
+        name: "User",
+        hidden: true,
+        component: () => import("@v/user/userCenter.vue"),
+        children: [
+          {
+            path: "/userCenter",
+            name: "userCenter",
+            hidden: true,
+            component: () => import("@v/user/userCenter.vue")
+          },
+          {
+            path: "/changePassword",
+            name: "ChangePassword",
+            hidden: true,
+            component: () => import("@v/user/changePassword.vue")
+          }
+        ]
+      },
+      // login
+      {
+        path: "/login",
+        name: "Login",
+        hidden: true,
+        component: () => import("@v/login/login.vue")
       }
     ]
   }
