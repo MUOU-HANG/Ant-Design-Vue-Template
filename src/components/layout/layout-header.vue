@@ -7,9 +7,9 @@
       </div>
       <div class="header-right">
         <!-- 消息提示 -->
-        <HeaderNoticBadge class="icon notice-badge" />
+        <HeaderNoticBadge class="notice-badge" />
         <!-- 用户中心 -->
-        <HeaderUserCenter class="icon" />
+        <HeaderUserCenter />
       </div>
     </div>
   </a-layout-header>
@@ -17,8 +17,8 @@
 
 <script lang="ts">
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons-vue";
-import HeaderNoticBadge from "@c/headerComponents/headerNoticeBadge.vue";
-import HeaderUserCenter from "@c/headerComponents/headerUserCenter.vue";
+import HeaderNoticBadge from "@c/layoutHeader/headerNotifyBadge/index.vue";
+import HeaderUserCenter from "@c/layoutHeader/user/headerUserCenter.vue";
 import { reactive, computed } from "vue";
 import { useStore } from "vuex";
 export default {
@@ -71,9 +71,12 @@ export default {
   position: fixed;
   right: 0;
   padding-right: 20px;
-  .notice-badge:hover {
-    background-color: rgb(249, 249, 249);
-    cursor: pointer;
+  > * {
+    padding: 0 20px;
+    &:hover {
+      background-color: rgb(249, 249, 249);
+      cursor: pointer;
+    }
   }
 }
 </style>

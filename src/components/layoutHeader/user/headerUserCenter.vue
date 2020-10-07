@@ -7,10 +7,16 @@
       </a>
       <template v-slot:overlay>
         <a-menu class="uer-center-items">
-          <a-menu-item>个人中心</a-menu-item>
-          <a-menu-item>修改密码</a-menu-item>
+          <a-menu-item>
+            <router-link to="/userCenter">个人中心</router-link>
+          </a-menu-item>
+          <a-menu-item>
+            <router-link to="/changePassword">修改密码</router-link>
+          </a-menu-item>
           <a-divider></a-divider>
-          <a-menu-item>退出登录</a-menu-item>
+          <a-menu-item>
+            <router-link to="/login">退出登录</router-link>
+          </a-menu-item>
         </a-menu>
       </template>
     </a-dropdown>
